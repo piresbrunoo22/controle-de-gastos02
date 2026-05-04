@@ -170,7 +170,7 @@
                 <div th:each="lancamento : ${lancamentos}" th:id="'lancamento-' + ${lancamento.id}" class="list-item">
                     <div class="col-desc" th:text="${lancamento.descricao}"></div>
                     <div class="col-valor valor" th:text="|R$ ${#numbers.formatDecimal(lancamento.valor, 1, 'POINT', 2, 'COMMA')}|"
-                         th:classappend="${lancamento.tipo.name() == 'DESPESA' ? 'despesa' : 'LUCRO'}">
+                         th:classappend="${lancamento.tipo.name() == 'DESPESA' ? 'despesa' : 'receita'}">
                     </div>
                     <div class="col-data" th:text="${#temporals.format(lancamento.data, 'dd/MM/yyyy')}"></div>
                     <div class="col-tipo" th:text="${lancamento.tipo.name()}"></div>
