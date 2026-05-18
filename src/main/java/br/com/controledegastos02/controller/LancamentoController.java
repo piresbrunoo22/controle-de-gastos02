@@ -40,11 +40,17 @@ public class LancamentoController {
     }
 
     @GetMapping("/")
-    public String index(@RequestParam(defaultValue = "0") int page, Model model) {
+    public String index(@RequestParam(defaultValue = "0") int page, 
+                        @RequestHeader(value = "HX-Request", required = false) boolean isHtmx, 
+                        Model model) {
         carregarDados(model, page);
         model.addAttribute("novoLancamento", new Lancamento());
         model.addAttribute("tipos", TipoLancamento.values());
         model.addAttribute("lancamentoParaEditar", new Lancamento());
+        
+        if (isHtmx) {
+            return "index :: lista-lancamentos";
+        }
         return "index";
     }
 

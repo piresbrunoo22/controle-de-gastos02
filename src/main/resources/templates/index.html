@@ -10,7 +10,7 @@
 <body>
     <button id="theme-toggle">🌙</button>
     <div class="container">
-        <h1>Meu Controle de Gastos 💰</h1>
+        <h1>Meu Controle de Gastos 2.3 💰</h1>
 
         <!-- Formulário de Cadastro -->
         <form th:object="${novoLancamento}" hx-post="/lancamentos"
@@ -94,6 +94,11 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Footer -->
+        <footer style="text-align: center; margin-top: 20px; color: var(--subtext-color); font-size: 14px;">
+            <p>&copy; 2026 - Controle de Gastos v2.3 - Bruno Pires</p>
+        </footer>
     </div>
 
     <!-- Fragmento Oculto para Edição -->
