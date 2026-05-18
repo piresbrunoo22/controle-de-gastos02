@@ -36,14 +36,15 @@
         </form>
 
         <!-- Container que o HTMX vai atualizar -->
-        <div th:fragment="lista-lancamentos">
-            <!-- Card de Saldo -->
-            <div class="saldo-container">
-                <div class="saldo-card" th:classappend="${saldo >= 0 ? 'positivo' : 'negativo'}">
-                    <h3>Saldo Atual</h3>
-                    <p th:text="|R$ ${#numbers.formatDecimal(saldo, 1, 'POINT', 2, 'COMMA')}|"></p>
+        <div id="lista-lancamentos">
+            <div th:fragment="lista-lancamentos">
+                <!-- Card de Saldo -->
+                <div class="saldo-container">
+                    <div class="saldo-card" th:classappend="${saldo >= 0 ? 'positivo' : 'negativo'}">
+                        <h3>Saldo Atual</h3>
+                        <p th:text="|R$ ${#numbers.formatDecimal(saldo, 1, 'POINT', 2, 'COMMA')}|"></p>
+                    </div>
                 </div>
-            </div>
 
                 <!-- Tabela de Lançamentos -->
                 <div class="list-header">
